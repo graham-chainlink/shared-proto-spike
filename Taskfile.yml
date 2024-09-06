@@ -1,0 +1,62 @@
+version: "3"
+
+tasks:
+  # Reusable task to generate Go code from protobuf files
+  proto:gen:
+    internal: true
+    desc: "Generate Go code from protobuf files"
+    cmds:
+      - protoc --go_out=./{{.SERVICE_NAME}}/gen --go_opt=paths=import --go-grpc_out=./{{.SERVICE_NAME}}/gen --go-grpc_opt=paths=import ./{{.SERVICE_NAME}}/proto/**/*.proto
+    sources:
+      - ./{{.SERVICE_NAME}}/**/*.proto
+    generates:
+      - ./{{.SERVICE_NAME}}/gen/**/*.pb.go
+
+  # Task to generate Go code from protobuf files for service-a
+  proto:gen:service-a:
+    desc: "Generate Go code from protobuf files for service-a"
+    cmds:
+      - task: proto:gen
+        vars: 
+          SERVICE_NAME: service-a
+
+  # Task to generate Go code from protobuf files for service-b
+  proto:gen:service-b:
+    desc: "Generate Go code from protobuf files for service-b"
+    cmds:
+      - task: proto:gen
+        vars: 
+          SERVICE_NAME: service-b
+
+  # Task to generate Go code from protobuf files for service-c
+  proto:gen:service-c:
+    desc: "Generate Go code from protobuf files for service-c"
+    cmds:
+      - task: proto:gen
+        vars: 
+          SERVICE_NAME: service-c
+
+  # Task to clean generated files for all services
+  proto:clean:
+    desc: "Clean generated protobuf files for all services"
+    cmds:
+      - find ./service-a/gen -name '*.pb.go' -delete
+      - find ./service-b/gen -name '*.pb.go' -delete
+      - find ./service-c/gen -name '*.pb.go' -delete
+
+  # Task to run go mod tidy in each service folder
+  go:mod:tidy:
+    desc: "Run go mod tidy in each service folder"
+    cmds:
+      - (cd ./service-a && go mod tidy)
+      - (cd ./service-b && go mod tidy)
+      - (cd ./service-c && go mod tidy)
+
+  # Task to run all proto related tasks for all services
+  proto:all:
+    desc: "Run all protobuf related tasks for all services"
+    cmds:
+      - task proto:clean
+      - task proto:gen:service-a
+      - task proto:gen:service-b
+      - task proto:gen:service-c

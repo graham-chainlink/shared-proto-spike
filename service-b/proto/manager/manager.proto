@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ggoh.manager;
+
+option go_package = "manager/v1";
+
+// The request message containing the Manager's ID.
+message ManagerRequest {
+  int32 Manager_id = 1;
+}
+
+// The response message containing the Manager's details.
+message ManagerResponse {
+  int32 Manager_id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+// The Manager service definition.
+service ManagerService {
+  // Retrieves Manager details
+  rpc GetManager (ManagerRequest) returns (ManagerResponse);
+}

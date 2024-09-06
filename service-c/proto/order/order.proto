@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ggoh.order;
+
+option go_package = "order/v1";
+
+// The request message containing the order ID.
+message OrderRequest {
+  int32 order_id = 1;
+}
+
+// The response message containing the order details.
+message OrderResponse {
+  int32 order_id = 1;
+  string product_name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
+
+// The order service definition.
+service OrderService {
+  // Retrieves order details
+  rpc GetOrder (OrderRequest) returns (OrderResponse);
+}

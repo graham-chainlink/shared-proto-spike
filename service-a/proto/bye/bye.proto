@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ggoh.bye;
+
+option go_package = "ggoh/genproto/bye";
+
+// The request message containing the user's name.
+message ByeRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ByeReply {
+  string message = 1;
+}
+
+// The greeting service definition.
+service Byer {
+  // Sends a greeting
+  rpc SayBye (ByeRequest) returns (ByeReply);
+}
