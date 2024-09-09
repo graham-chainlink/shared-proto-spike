@@ -1,0 +1,21 @@
+{
+  "name": "shared-proto-spike",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "service-a",
+    "service-b",
+    "service-c"
+  ],
+  "scripts": {
+    "ci:changeset:publish": "pnpm changeset publish",
+    "ci:changeset:version": "pnpm changeset version"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@changesets/cli": "^2.27.8"
+  }
+}
