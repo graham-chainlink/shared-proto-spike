@@ -1,4 +1,4 @@
-module github.com/ggoh/shared-proto-spike/service-a
+module github.com/graham-chainlink/shared-proto-spike/service-a
 
 go 1.22.0
 
