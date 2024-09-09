@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ggoh.user;
+package user;
 
 option go_package = "user/v1";
 

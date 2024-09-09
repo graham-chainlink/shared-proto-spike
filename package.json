@@ -5,8 +5,7 @@
   "private": true,
   "workspaces": [
     "service-a",
-    "service-b",
-    "service-c"
+    "service-b"
   ],
   "scripts": {
     "ci:changeset:publish": "pnpm changeset publish",

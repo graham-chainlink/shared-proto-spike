@@ -4,7 +4,7 @@
 // - protoc             v4.25.3
 // source: service-a/proto/bye/bye.proto
 
-package bye
+package v1
 
 import (
 	context "context"
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Byer_SayBye_FullMethodName = "/ggoh.bye.Byer/SayBye"
+	Byer_SayBye_FullMethodName = "/bye.Byer/SayBye"
 )
 
 // ByerClient is the client API for Byer service.
@@ -98,7 +98,7 @@ func _Byer_SayBye_Handler(srv interface{}, ctx context.Context, dec func(interfa
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Byer_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ggoh.bye.Byer",
+	ServiceName: "bye.Byer",
 	HandlerType: (*ByerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

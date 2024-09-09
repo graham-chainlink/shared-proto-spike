@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ggoh.manager;
+package manager;
 
 option go_package = "manager/v1";
 

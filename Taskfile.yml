@@ -42,7 +42,6 @@ tasks:
     cmds:
       - find ./service-a/gen -name '*.pb.go' -delete
       - find ./service-b/gen -name '*.pb.go' -delete
-      - find ./service-c/gen -name '*.pb.go' -delete
 
   # Task to run go mod tidy in each service folder
   go:mod:tidy:
@@ -50,7 +49,6 @@ tasks:
     cmds:
       - (cd ./service-a && go mod tidy)
       - (cd ./service-b && go mod tidy)
-      - (cd ./service-c && go mod tidy)
 
   # Task to run all proto related tasks for all services
   proto:all:
@@ -59,4 +57,3 @@ tasks:
       - task proto:clean
       - task proto:gen:service-a
       - task proto:gen:service-b
-      - task proto:gen:service-c

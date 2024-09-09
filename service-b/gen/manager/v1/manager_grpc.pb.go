@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ManagerService_GetManager_FullMethodName = "/ggoh.manager.ManagerService/GetManager"
+	ManagerService_GetManager_FullMethodName = "/manager.ManagerService/GetManager"
 )
 
 // ManagerServiceClient is the client API for ManagerService service.
@@ -98,7 +98,7 @@ func _ManagerService_GetManager_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ManagerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ggoh.manager.ManagerService",
+	ServiceName: "manager.ManagerService",
 	HandlerType: (*ManagerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
