@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package bye;
 
-option go_package = "bye/v1";
+option go_package = "github.com/graham-chainlink/shared-proto-spike/service-a/bye";
 
 // The request message containing the user's name.
 message ByeRequest {

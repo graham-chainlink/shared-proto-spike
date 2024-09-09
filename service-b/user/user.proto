@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "user/v1";
+option go_package = "github.com/graham-chainlink/shared-proto-spike/service-b/user";
 
 // The request message containing the user's ID.
 message UserRequest {

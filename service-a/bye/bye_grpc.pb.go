@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.3
-// source: service-a/proto/bye/bye.proto
+// source: service-a/bye/bye.proto
 
-package v1
+package bye
 
 import (
 	context "context"
@@ -107,5 +107,5 @@ var Byer_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "service-a/proto/bye/bye.proto",
+	Metadata: "service-a/bye/bye.proto",
 }

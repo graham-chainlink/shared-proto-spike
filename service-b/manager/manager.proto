@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package manager;
 
-option go_package = "manager/v1";
+option go_package = "github.com/graham-chainlink/shared-proto-spike/service-b/manager";
 
 // The request message containing the Manager's ID.
 message ManagerRequest {

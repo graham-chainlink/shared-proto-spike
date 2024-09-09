@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package hello;
 
-option go_package = "hello/v1";
+option go_package = "github.com/graham-chainlink/shared-proto-spike/service-a/hello";
 
 // The request message containing the user's name.
 message HelloRequest {
