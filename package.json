@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "main": "index.js",
   "private": true,
-  "workspaces": [
-    "service-a",
-    "service-b"
-  ],
   "scripts": {
     "ci:changeset:publish": "pnpm changeset publish",
     "ci:changeset:version": "pnpm changeset version"

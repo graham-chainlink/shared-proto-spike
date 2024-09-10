@@ -1,0 +1,3 @@
+packages:
+  - 'service-a'
+  - 'service-b'
