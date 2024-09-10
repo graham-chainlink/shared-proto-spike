@@ -12,6 +12,7 @@ message HelloRequest {
 // The response message containing the greetings.
 message HelloReply {
   string message = 1;
+  string emoji = 2;
 }
 
 // The greeting service definition.
