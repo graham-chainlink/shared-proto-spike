@@ -5,12 +5,16 @@
   "private": true,
   "scripts": {
     "ci:changeset:publish": "pnpm changeset publish",
-    "ci:changeset:version": "pnpm changeset version"
+    "ci:changeset:version": "pnpm changeset version",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "@changesets/cli": "^2.27.8"
+  },
+  "devDependencies": {
+    "husky": "^9.1.6"
   }
 }

@@ -1,0 +1,11 @@
+# Stash unstaged changes
+git stash --keep-index --include-untracked
+
+# Regenerate the proto files
+task proto:all
+
+# Add only the generated .pb.go files
+find . -name "*.pb.go" -exec git add {} +
+
+# Restore stashed changes
+git stash pop
