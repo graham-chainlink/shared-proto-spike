@@ -8,6 +8,7 @@ option go_package = "github.com/graham-chainlink/shared-proto-spike/service-a/by
 message ByeRequest {
   string name = 1;
   string signature = 2;
+  string icon = 3;
 }
 
 // The response message containing the greetings.
