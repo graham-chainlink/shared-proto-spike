@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package hello;
 
+import "service-a/shared/ptypes/label.proto";
+
 option go_package = "github.com/graham-chainlink/shared-proto-spike/service-a/hello";
 
 // The request message containing the user's name.
@@ -13,6 +15,7 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
   string emoji = 2;
+  shared.Phone phone = 3;
 }
 
 // The greeting service definition.

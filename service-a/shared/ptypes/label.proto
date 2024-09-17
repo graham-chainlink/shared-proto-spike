@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package shared;
+
+option go_package = "github.com/graham-chainlink/shared-proto-spike/service-a/shared/ptypes";
+
+message Phone {
+  int32 ram = 1;
+  string cpu = 2;
+}
